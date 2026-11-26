@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sepolia Wallet dApp</title>
+  <link rel="stylesheet" href="../../style.css">
+  <!-- ethers.js: library untuk ngobrol dengan blockchain Ethereum -->
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+</head>
+<body>
+  <main>
+    <p><a href="../../index.html">← Back to portfolio</a></p>
+    <h1>Sepolia Wallet dApp</h1>
+    <p class="muted">Connect MetaMask, check your balance, and send test ETH on the Sepolia testnet.</p>
+
+    <!-- Langkah 1: sambungkan wallet -->
+    <div class="card">
+      <button id="connectBtn">Connect Wallet</button>
+      <p id="status" class="muted" style="margin-top:12px">Not connected.</p>
+    </div>
+
+    <!-- Langkah 2: info wallet (muncul setelah connect) -->
+    <div id="walletInfo" class="card hidden">
+      <p><strong>Address</strong><br><span id="address" class="mono"></span></p>
+      <p><strong>Network</strong><br><span id="network"></span></p>
+      <p><strong>Balance</strong><br><span id="balance"></span> SepoliaETH</p>
+      <button id="switchBtn" class="hidden">Switch to Sepolia</button>
+    </div>
+
+    <!-- Langkah 3: kirim ETH testnet -->
+    <div id="sendBox" class="card hidden">
+      <h2 style="margin-top:0">Send test ETH</h2>
+      <input id="toInput" placeholder="Recipient address (0x...)">
+      <input id="amountInput" placeholder="Amount, e.g. 0.001" inputmode="decimal">
+      <button id="sendBtn">Send</button>
+      <p id="txStatus" style="margin-top:12px"></p>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

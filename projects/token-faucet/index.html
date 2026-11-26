@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FCT Token Faucet</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+</head>
+<body>
+  <main>
+    <p><a href="../../index.html">← Back to portfolio</a></p>
+    <h1>FCT Token Faucet</h1>
+    <p class="muted">Claim free Faucet Token (FCT), an ERC-20 I wrote and deployed on Sepolia. One claim per address every 24 hours, enforced by the smart contract.</p>
+
+    <div class="card">
+      <button id="connectBtn">Connect Wallet</button>
+      <p id="status" class="muted" style="margin-top:12px">Not connected.</p>
+    </div>
+
+    <div id="tokenBox" class="card hidden">
+      <p><strong>Your balance</strong><br><span id="balance">–</span> FCT</p>
+      <p><strong>Total supply</strong><br><span id="supply">–</span> FCT</p>
+      <p><strong>Per claim</strong><br><span id="claimAmount">–</span> FCT</p>
+      <button id="claimBtn">Claim FCT</button>
+      <button id="addTokenBtn" class="secondary">Add FCT to MetaMask</button>
+      <button id="switchBtn" class="hidden">Switch to Sepolia</button>
+      <p id="txStatus" style="margin-top:12px"></p>
+    </div>
+
+    <div id="historyBox" class="card hidden">
+      <h2 style="margin-top:0">Recent claims</h2>
+      <ul id="history" class="mono"></ul>
+    </div>
+
+    <p class="muted">Contract: <a id="contractLink" target="_blank" rel="noopener"></a></p>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

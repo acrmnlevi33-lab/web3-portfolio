@@ -1,0 +1,102 @@
+/* Warna dasar (mode terang) */
+:root {
+  --bg: #f7f7f5;
+  --card: #ffffff;
+  --text: #1c1c1e;
+  --muted: #6b6b70;
+  --border: #e3e3e0;
+  --accent: #5b4bdb;
+  --accent-text: #ffffff;
+  --ok: #1f8a4c;
+  --err: #c0392b;
+}
+
+/* Warna mode gelap (mengikuti setting komputer) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111114;
+    --card: #1b1b20;
+    --text: #ececf1;
+    --muted: #9a9aa3;
+    --border: #2c2c33;
+    --accent: #8b7dff;
+    --accent-text: #111114;
+    --ok: #4cc782;
+    --err: #ff6b5e;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 16px 64px;
+}
+
+h1 { font-size: 2rem; margin: 0 0 4px; }
+h2 { font-size: 1.15rem; margin: 40px 0 12px; }
+p  { margin: 0 0 12px; }
+a  { color: var(--accent); }
+
+.muted { color: var(--muted); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 12px;
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }
+.tags li {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px 12px;
+  font-size: 0.9rem;
+}
+
+button {
+  background: var(--accent);
+  color: var(--accent-text);
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.mono { font-family: ui-monospace, Menlo, monospace; word-break: break-all; }
+.ok   { color: var(--ok); }
+.err  { color: var(--err); }
+.hidden { display: none; }
+button.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  margin-left: 8px;
+}
+#history { padding-left: 18px; margin: 0; }
+#history li { margin-bottom: 6px; }
